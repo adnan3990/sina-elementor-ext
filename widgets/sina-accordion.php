@@ -570,7 +570,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 
 	protected function _content_template() {
 		?>
-		<# if ( settings.accordion.length > 0 ) { #>
 		<div class="sina-accordion"
 		data-open-first="{{{ settings.first_open }}}">
 		<#
@@ -607,7 +606,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 			</div>
 		<# }); #>
 		</div>
-		<# } #>
 		<?php
 	}
 }

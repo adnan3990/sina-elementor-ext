@@ -164,7 +164,7 @@ class Sina_Progressbar_Widget extends Widget_Base {
 					[
 						'title' => __('Brand Marketing', 'sina-ext'),
 						'percentage' => 77,
-						'bar_bg' => '#aa0000',
+						'bar_bg' => '#d300d0',
 					],
 					[
 						'title' => __('Graphic Design', 'sina-ext'),
@@ -381,7 +381,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 
 	protected function _content_template() {
 		?>
-		<# if ( settings.progressbars.length > 0 ) { #>
 		<div class="sina-progressbars">
 		<#
 			_.each( settings.progressbars, function( bar, index ) {
@@ -399,7 +398,6 @@ class Sina_Progressbar_Widget extends Widget_Base {
 			</div>
 		<# }); #>
 		</div>
-		<# } #>
 		<?php
 	}
 }

@@ -1284,21 +1284,21 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 
 	protected function _content_template() {
 		?>
-		<# if ( settings.container_width ) {
-			view.addRenderAttribute( 'title', 'class', 'sina-banner-title' );
-			view.addInlineEditingAttributes( 'title' );
+		<#
+		view.addRenderAttribute( 'title', 'class', 'sina-banner-title' );
+		view.addInlineEditingAttributes( 'title' );
 
-			view.addRenderAttribute( 'subtitle', 'class', 'sina-banner-subtitle' );
-			view.addInlineEditingAttributes( 'subtitle' );
+		view.addRenderAttribute( 'subtitle', 'class', 'sina-banner-subtitle' );
+		view.addInlineEditingAttributes( 'subtitle' );
 
-			view.addRenderAttribute( 'desc', 'class', 'sina-banner-desc' );
-			view.addInlineEditingAttributes( 'desc' );
+		view.addRenderAttribute( 'desc', 'class', 'sina-banner-desc' );
+		view.addInlineEditingAttributes( 'desc' );
 
-			view.addRenderAttribute( 'pbtn_text', 'class', 'sina-banner-pbtn-text' );
-			view.addInlineEditingAttributes( 'pbtn_text' );
+		view.addRenderAttribute( 'pbtn_text', 'class', 'sina-banner-pbtn-text' );
+		view.addInlineEditingAttributes( 'pbtn_text' );
 
-			view.addRenderAttribute( 'sbtn_text', 'class', 'sina-banner-sbtn-text' );
-			view.addInlineEditingAttributes( 'sbtn_text' );
+		view.addRenderAttribute( 'sbtn_text', 'class', 'sina-banner-sbtn-text' );
+		view.addInlineEditingAttributes( 'sbtn_text' );
 		#>
 		<div class="sina-particle-layer">
 			<div class="sina-banner-container">
@@ -1367,7 +1367,6 @@ class Sina_Particle_Layer_Widget extends Widget_Base {
 			data-dmouse="{{{settings.mouse_state}}}">
 			</div>
 		</div>
-		<# } #>
 		<?php
 	}
 }

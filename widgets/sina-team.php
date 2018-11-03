@@ -567,34 +567,32 @@ class Sina_Team_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			if ( settings.image.url ) {
-				view.addRenderAttribute( 'name', 'class', 'sina-team-name' );
-				view.addInlineEditingAttributes( 'name' );
+		view.addRenderAttribute( 'name', 'class', 'sina-team-name' );
+		view.addInlineEditingAttributes( 'name' );
 
-				view.addRenderAttribute( 'position', 'class', 'sina-team-position' );
-				view.addInlineEditingAttributes( 'position' );
+		view.addRenderAttribute( 'position', 'class', 'sina-team-position' );
+		view.addInlineEditingAttributes( 'position' );
 
-				view.addRenderAttribute( 'desc', 'class', 'sina-team-desc' );
-				view.addInlineEditingAttributes( 'desc' );
-			#>
-			<div class="sina-team">
-				<img src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
-				<div class="sina-team-overlay">
-					<h5 {{{ view.getRenderAttributeString( 'name' ) }}}>{{{settings.name}}}</h5>
-					<h6 {{{ view.getRenderAttributeString( 'position' ) }}}>{{{settings.position}}}</h6>
-					<div {{{ view.getRenderAttributeString( 'desc' ) }}}>{{{settings.desc}}}</div>
-					<ul class="sina-team-social">
-						<# _.each( settings.social_icons, function( item, index ) { #>
-							<li>
-								<a href="{{{item.link.url}}}">
-									<i class="{{{item.icon}}}"></i>
-								</a>
-							</li>
-						<# }); #>
-					</ul>
-				</div>
-			</div><!-- .sina-team -->
-		<# } #>
+		view.addRenderAttribute( 'desc', 'class', 'sina-team-desc' );
+		view.addInlineEditingAttributes( 'desc' );
+		#>
+		<div class="sina-team">
+			<img src="{{{settings.image.url}}}" alt="{{{settings.name}}}">
+			<div class="sina-team-overlay">
+				<h5 {{{ view.getRenderAttributeString( 'name' ) }}}>{{{settings.name}}}</h5>
+				<h6 {{{ view.getRenderAttributeString( 'position' ) }}}>{{{settings.position}}}</h6>
+				<div {{{ view.getRenderAttributeString( 'desc' ) }}}>{{{settings.desc}}}</div>
+				<ul class="sina-team-social">
+					<# _.each( settings.social_icons, function( item, index ) { #>
+						<li>
+							<a href="{{{item.link.url}}}">
+								<i class="{{{item.icon}}}"></i>
+							</a>
+						</li>
+					<# }); #>
+				</ul>
+			</div>
+		</div>
 		<?php
 	}
 }

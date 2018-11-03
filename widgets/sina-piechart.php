@@ -398,19 +398,17 @@ class Sina_Piechart_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			if ( settings.max_value && settings.value ) {
-				view.addRenderAttribute( 'title', 'class', 'sina-piechart-title' );
-				view.addInlineEditingAttributes( 'title' );
-			#>
-			<div class="sina-piechart" style="width: {{{settings.size}}}px; height: {{{settings.size}}}px;">
-				<div class="sina-piechart-wrap" data-track="{{{settings.track_color}}}" data-track-width="{{{settings.track_width}}}" data-bar="{{{settings.bar_color}}}" data-line="{{{settings.bar_width}}}" data-cap="{{{settings.bar_cap}}}" data-speed="{{{settings.speed}}}" data-scale="{{{settings.scale_color}}}" data-size="{{{settings.size}}}" data-percent="{{{Math.round(settings.value / settings.max_value * 100)}}}">
-				</div>
-				<div class="sina-piechart-content" style="padding: {{{settings.bar_width + 10}}}px;">
-					<span class="sina-piechart-percent">{{{settings.prefix + settings.value + settings.suffix}}}</span>
-					<div {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title}}}</div>
-				</div>
+		view.addRenderAttribute( 'title', 'class', 'sina-piechart-title' );
+		view.addInlineEditingAttributes( 'title' );
+		#>
+		<div class="sina-piechart" style="width: {{{settings.size}}}px; height: {{{settings.size}}}px;">
+			<div class="sina-piechart-wrap" data-track="{{{settings.track_color}}}" data-track-width="{{{settings.track_width}}}" data-bar="{{{settings.bar_color}}}" data-line="{{{settings.bar_width}}}" data-cap="{{{settings.bar_cap}}}" data-speed="{{{settings.speed}}}" data-scale="{{{settings.scale_color}}}" data-size="{{{settings.size}}}" data-percent="{{{Math.round(settings.value / settings.max_value * 100)}}}">
 			</div>
-		<# } #>
+			<div class="sina-piechart-content" style="padding: {{{settings.bar_width + 10}}}px;">
+				<span class="sina-piechart-percent">{{{settings.prefix + settings.value + settings.suffix}}}</span>
+				<div {{{ view.getRenderAttributeString( 'title' ) }}}>{{{settings.title}}}</div>
+			</div>
+		</div>
 		<?php
 	}
 }

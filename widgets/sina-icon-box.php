@@ -523,12 +523,12 @@ class Sina_Icon_Box_Widget extends Widget_Base {
 			<div class="sina-iconbox-content">
 				<?php if ( $data['title'] ): ?>
 					<h3 <?php echo $this->get_render_attribute_string( 'title' ); ?>>
-					<?php echo wp_kses_post( $data['title'] ); ?>
+					<?php echo esc_html( $data['title'] ); ?>
 					</h3>
 				<?php endif; ?>
 
 				<?php if ( $data['desc'] ): ?>
-					<div <?php echo $this->get_render_attribute_string( 'desc' ); ?>><?php echo wp_kses_post( $data['desc'] ); ?></div>
+					<div <?php echo $this->get_render_attribute_string( 'desc' ); ?>><?php echo esc_html( $data['desc'] ); ?></div>
 				<?php endif; ?>
 			</div>
 		</div><!-- .sina-iconbox -->
@@ -539,34 +539,32 @@ class Sina_Icon_Box_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			if ( settings.title || settings.desc ) {
-				view.addRenderAttribute( 'title', 'class', 'sina-iconbox-title' );
-				view.addInlineEditingAttributes( 'title' );
+		view.addRenderAttribute( 'title', 'class', 'sina-iconbox-title' );
+		view.addInlineEditingAttributes( 'title' );
 
-				view.addRenderAttribute( 'desc', 'class', 'sina-iconbox-desc' );
-				view.addInlineEditingAttributes( 'desc' );
-			#>
-			<div class="sina-iconbox">
-				<# if ( settings.icon ) { #>
-					<div class="sina-iconbox-icon">
-						<i class="{{{settings.icon}}}"></i>
+		view.addRenderAttribute( 'desc', 'class', 'sina-iconbox-desc' );
+		view.addInlineEditingAttributes( 'desc' );
+		#>
+		<div class="sina-iconbox">
+			<# if ( settings.icon ) { #>
+				<div class="sina-iconbox-icon">
+					<i class="{{{settings.icon}}}"></i>
+				</div>
+			<# } #>
+			<div class="sina-iconbox-content">
+				<# if ( settings.title ) { #>
+					<h3 {{{ view.getRenderAttributeString( 'title' ) }}}>
+					{{{settings.title}}}
+					</h3>
+				<# } #>
+
+				<# if (settings.desc ) { #>
+					<div {{{ view.getRenderAttributeString( 'desc' ) }}}>
+						{{{settings.desc}}}
 					</div>
 				<# } #>
-				<div class="sina-iconbox-content">
-					<# if ( settings.title ) { #>
-						<h3 {{{ view.getRenderAttributeString( 'title' ) }}}>
-						{{{settings.title}}}
-						</h3>
-					<# } #>
-
-					<# if (settings.desc ) { #>
-						<div {{{ view.getRenderAttributeString( 'desc' ) }}}>
-							{{{settings.desc}}}
-						</div>
-					<# } #>
-				</div>
 			</div>
-		<# } #>
+		</div>
 		<?php
 	}
 }

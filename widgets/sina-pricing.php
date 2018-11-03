@@ -790,46 +790,44 @@ class Sina_Pricing_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			if ( settings.title || settings.price || settings.btn_label ) {
-				view.addRenderAttribute( 'title', 'class', 'sina-pricing-title' );
-				view.addInlineEditingAttributes( 'title' );
+		view.addRenderAttribute( 'title', 'class', 'sina-pricing-title' );
+		view.addInlineEditingAttributes( 'title' );
 
-				view.addRenderAttribute( 'btn_label', 'class', 'sina-order-btn' );
-				view.addInlineEditingAttributes( 'btn_label' );
+		view.addRenderAttribute( 'btn_label', 'class', 'sina-order-btn' );
+		view.addInlineEditingAttributes( 'btn_label' );
 
-				view.addRenderAttribute( 'price' );
-				view.addInlineEditingAttributes( 'price' );
+		view.addRenderAttribute( 'price' );
+		view.addInlineEditingAttributes( 'price' );
 
-				view.addRenderAttribute( 'price_suffix', 'class', 'sina-price-suffix' );
-				view.addInlineEditingAttributes( 'price_suffix' );
-			#>
-			<div class="sina-pricing">
-				<h3 {{{ view.getRenderAttributeString( 'title' ) }}}>
-					{{{settings.title}}}
-				</h3>
-				<h4 class="sina-price-tag">
-					<span {{{ view.getRenderAttributeString( 'price' ) }}}>{{{settings.price}}}</span><span {{{ view.getRenderAttributeString( 'price_suffix' ) }}}>{{{settings.price_suffix}}}</span>
-				</h4>
-				<ul class="sina-pricing-body">
-					<#
-						_.each( settings.item, function( item, index ) {
-							var titleKey = view.getRepeaterSettingKey( 'title', 'item', index );
-							view.addRenderAttribute( titleKey );
-							view.addInlineEditingAttributes( titleKey );
-						#>
-						<li {{{ view.getRenderAttributeString( titleKey ) }}}>{{{item.title}}}</li>
-					<# }); #>
-				</ul>
-				<# if ( settings.btn_label) { #>
-					<div class="sina-pricing-btn">
-						<a {{{ view.getRenderAttributeString( 'btn_label' ) }}}
-						href="{{{settings.btn_link.url}}}">
-							{{{settings.btn_label}}}
-						</a>
-					</div>
-				<# } #>
-			</div>
-		<# } #>
+		view.addRenderAttribute( 'price_suffix', 'class', 'sina-price-suffix' );
+		view.addInlineEditingAttributes( 'price_suffix' );
+		#>
+		<div class="sina-pricing">
+			<h3 {{{ view.getRenderAttributeString( 'title' ) }}}>
+				{{{settings.title}}}
+			</h3>
+			<h4 class="sina-price-tag">
+				<span {{{ view.getRenderAttributeString( 'price' ) }}}>{{{settings.price}}}</span><span {{{ view.getRenderAttributeString( 'price_suffix' ) }}}>{{{settings.price_suffix}}}</span>
+			</h4>
+			<ul class="sina-pricing-body">
+				<#
+					_.each( settings.item, function( item, index ) {
+						var titleKey = view.getRepeaterSettingKey( 'title', 'item', index );
+						view.addRenderAttribute( titleKey );
+						view.addInlineEditingAttributes( titleKey );
+					#>
+					<li {{{ view.getRenderAttributeString( titleKey ) }}}>{{{item.title}}}</li>
+				<# }); #>
+			</ul>
+			<# if ( settings.btn_label) { #>
+				<div class="sina-pricing-btn">
+					<a {{{ view.getRenderAttributeString( 'btn_label' ) }}}
+					href="{{{settings.btn_link.url}}}">
+						{{{settings.btn_label}}}
+					</a>
+				</div>
+			<# } #>
+		</div>
 		<?php
 	}
 }

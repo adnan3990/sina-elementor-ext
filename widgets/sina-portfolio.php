@@ -141,10 +141,10 @@ class Sina_Portfolio_Widget extends Widget_Base {
 				'label' => __( 'Effects', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'sina-pf-effect-move' => __( 'Buttons Move', 'sina-ext' ),
-					'sina-pf-effect-zoom' => __( 'Zoom', 'sina-ext' ),
-					'sina-pf-effect-zoom sina-pf-effect-move' => __( 'Buttons Move & Zoom', 'sina-ext' ),
 					'sina-pf-effect-fade' => __( 'Fade', 'sina-ext' ),
+					'sina-pf-effect-zoom' => __( 'Zoom', 'sina-ext' ),
+					'sina-pf-effect-move' => __( 'Fade & Buttons Move', 'sina-ext' ),
+					'sina-pf-effect-zoom sina-pf-effect-move' => __( 'Zoom & Buttons Move', 'sina-ext' ),
 				],
 				'default' => 'sina-pf-effect-move',
 			]

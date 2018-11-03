@@ -605,33 +605,33 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			var displayClass = ('block' == settings.display) ? 'sina-input-block' : '';
+		var displayClass = ('block' == settings.display) ? 'sina-input-block' : '';
 
-			view.addRenderAttribute( 'label' );
-			view.addInlineEditingAttributes( 'label' );
-			#>
-			<div class="sina-form">
-				<form class="sina-subs-form"
-				data-link="{{{settings.link}}}">
-					<div class="sina-subs-input">
-						<input class="sina-input-field {{{displayClass}}}" type="email" name="subscribe" placeholder="{{{settings.placeholder}}}" required>
-						<button type="submit" class="sina-button sina-subs-btn">
-							<# if ( settings.icon && 'left' == settings.icon_position ) { #>
-								<i class="{{{settings.icon}}} sina-btn-icon-left"></i>
-							<# } #>
+		view.addRenderAttribute( 'label' );
+		view.addInlineEditingAttributes( 'label' );
+		#>
+		<div class="sina-form">
+			<form class="sina-subs-form"
+			data-link="{{{settings.link}}}">
+				<div class="sina-subs-input">
+					<input class="sina-input-field {{{displayClass}}}" type="email" name="subscribe" placeholder="{{{settings.placeholder}}}" required>
+					<button type="submit" class="sina-button sina-subs-btn">
+						<# if ( settings.icon && 'left' == settings.icon_position ) { #>
+							<i class="{{{settings.icon}}} sina-btn-icon-left"></i>
+						<# } #>
 
-							<span {{{ view.getRenderAttributeString( 'label' ) }}}>{{{settings.label}}}</span>
+						<span {{{ view.getRenderAttributeString( 'label' ) }}}>{{{settings.label}}}</span>
 
-							<# if ( settings.icon && 'right' == settings.icon_position ) { #>
-								<i class="{{{settings.icon}}} sina-btn-icon-right"></i>
-							<# } #>
-						</button>
-					</div>
-					<h5 class="sina-subs-success"></h5>
-					<h5 class="sina-subs-error"></h5>
-					<p class="sina-subs-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
-				</form>
-			</div>
+						<# if ( settings.icon && 'right' == settings.icon_position ) { #>
+							<i class="{{{settings.icon}}} sina-btn-icon-right"></i>
+						<# } #>
+					</button>
+				</div>
+				<h5 class="sina-subs-success"></h5>
+				<h5 class="sina-subs-error"></h5>
+				<p class="sina-subs-process"><?php _e( 'Processing...', 'sina-ext' ); ?></p>
+			</form>
+		</div>
 		<?php
 	}
 }

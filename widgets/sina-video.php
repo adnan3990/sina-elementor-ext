@@ -417,19 +417,17 @@ class Sina_Video_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			if ( settings.icon ) {
-				view.addRenderAttribute( 'title', 'class', 'sina-video-title' );
-				view.addInlineEditingAttributes( 'title' );
-			#>
-			<div class="sina-video">
-				<a class="sina-video-play" href="{{{settings.video_link}}}">
-					<i class="{{{settings.icon}}}"></i>
-				</a>
-				<h4 {{{ view.getRenderAttributeString( 'title' ) }}}>
-					{{{settings.title}}}
-				</h4>
-			</div>
-		<# } #>
+		view.addRenderAttribute( 'title', 'class', 'sina-video-title' );
+		view.addInlineEditingAttributes( 'title' );
+		#>
+		<div class="sina-video">
+			<a class="sina-video-play" href="{{{settings.video_link}}}">
+				<i class="{{{settings.icon}}}"></i>
+			</a>
+			<h4 {{{ view.getRenderAttributeString( 'title' ) }}}>
+				{{{settings.title}}}
+			</h4>
+		</div>
 		<?php
 	}
 }

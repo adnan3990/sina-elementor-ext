@@ -42,6 +42,538 @@ img.mfp-img{
 	outline: none;
 }
 
+
+/*--------------------------------- Accordion -------------------------------------- */
+.sina-accordion-item{
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+.sina-accordion-item .sina-accordion-header{
+	margin: 0;
+	padding: 20px 25px;
+	cursor: pointer;
+	font-weight: 700;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	transition: 0.4s;
+}
+.sina-accordion-item .sina-accordion-header,
+.sina-accordion-title{
+	font-size: 16px;
+}
+.sina-accordion-body{
+	overflow: hidden;
+	display: none;
+	border: 1px solid #1085e4;
+}
+.sina-accordion-desc{
+	padding: 20px;
+}
+.sina-accordion-icon .on,
+.sina-accordion-icon .off {
+	font-size: 20px;
+	line-height: 18px;
+}
+.sina-accordion-icon {
+	padding-left: 20px;
+}
+.sina-accordion-item .sina-accordion-icon .on,
+.sina-accordion-item.open .sina-accordion-icon .off{
+	display: none;
+}
+.sina-accordion-item.open .sina-accordion-icon .on{
+	display: block;
+}
+
+/*------------------- Banner Slider, Brand Carousel & Review Carousel -------------------*/
+.sina-banner-slider{
+	position: relative;
+}
+.sina-slider-content{
+	padding: 200px 120px 220px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.sina-slider-overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.sina-review-carousel .owl-next,
+.sina-review-carousel .owl-prev,
+.sina-brand-carousel .owl-next,
+.sina-brand-carousel .owl-prev,
+.sina-banner-slider .owl-next,
+.sina-banner-slider .owl-prev {
+	position: absolute;
+	top: calc(50% - 18px);
+	font-family: arial, sans-serif;
+	font-weight: 700;
+	text-align: center;
+	border-radius: 4px;
+	border: 0;
+	outline: 0;
+	padding: 2px 14px 6px;
+	font-size: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	opacity: 0;
+	background: #1085e4;
+	transition: all 0.4s ease-in-out;
+}
+.sina-review-carousel .owl-next,
+.sina-brand-carousel .owl-next,
+.sina-banner-slider .owl-next{
+	right: 35px;
+}
+.sina-review-carousel .owl-prev,
+.sina-brand-carousel .owl-prev,
+.sina-banner-slider .owl-prev{
+	left: 35px;
+}
+.sina-review-carousel .owl-next span,
+.sina-review-carousel .owl-prev span,
+.sina-brand-carousel .owl-next span,
+.sina-brand-carousel .owl-prev span,
+.sina-banner-slider .owl-next span,
+.sina-banner-slider .owl-prev span{
+	float: left;
+}
+.sina-review-carousel:hover .owl-next,
+.sina-review-carousel:hover .owl-prev,
+.sina-banner-slider:hover .owl-next,
+.sina-banner-slider:hover .owl-prev {
+	opacity: 1;
+}
+.sina-banner-slider .owl-dots,
+.sina-review-carousel .owl-dots {
+	display: flex;
+	-ms-display: flex;
+	-webkit-display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.sina-banner-slider .owl-dots{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.sina-banner-slider .owl-dot,
+.sina-review-carousel .owl-dot {
+	outline: 0;
+	cursor: pointer;
+	background: transparent;
+	height: 10px; 
+	width: 20px;
+	border: 1px solid #1085e4;
+	border-radius: 10px;
+	margin: 25px .2rem;
+	transition: all .25s ease-in-out
+}
+.sina-banner-slider .owl-dot.active,
+.sina-review-carousel .owl-dot.active {
+	height: 10px;
+	width: 10px;
+	background-color: #1085e4;
+	border-radius: 50%
+}
+.sina-anim-invisible{
+	visibility: hidden;
+}
+
+/*--------------------------------- Blogpost -------------------------------------- */
+.sina-blogpost {
+	overflow: hidden;
+}
+.sina-bp-item-2{
+	width: 50%;
+}
+.sina-bp-item-3{
+	width: 33.333333%;
+}
+.sina-bp-item-4{
+	width: 25%;
+}
+.sina-bp-col{
+	padding: 10px;
+	float: left;
+	overflow: hidden;
+}
+.sina-bp{
+	border: 1px solid #eee;
+}
+.sina-bg-thumb img {
+	display: block;
+}
+.sina-bp-content{
+	padding: 15px;
+}
+.sina-bp-title,
+.sina-bp-title a{
+	display: block;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.1;
+	transition: .4s;
+}
+.sina-bp-meta{
+	padding-top: .75rem;
+	border-top: 1px solid #1085e4;
+	margin-bottom: 0px;
+	margin-top: 15px;
+}
+.sina-bp-pagination {
+	margin: 0 15px;
+}
+.sina-bp-pagination .page-numbers {
+	display: inline-block;
+	padding: 6px 12px;
+	margin: 4px 2px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 20px;
+	border: 1px solid #1085e4;
+	transition: all 0.4s ease-in-out;
+}
+
+/*--------------------------------- Brand Carousel -------------------------------------- */
+.sina-brand-carousel{
+	overflow: hidden;
+}
+.sina-brand-item{
+	padding: 20px;
+}
+.sina-brand-item-inner{
+	border: 1px solid #eee;
+	transition: all 0.3s ease-in-out;
+}
+.sina-brand-item-inner a{
+	display: block;
+	padding: 20px 75px;
+	text-align: center;
+}
+.sina-brand-item-inner a img{
+	transition: all 0.3s ease-in-out;
+}
+
+/*--------------------------------- Contact Form -------------------------------------- */
+.sina-contact-input-half{
+	width: calc(50% - 10px);
+	float: left;
+}
+.sina-contact-input-half:last-child{
+	margin-left: 20px;
+}
+.sina-contact-input{
+	overflow: hidden;
+}
+.sina-contact-input .sina-input-field{
+	width: calc(33.33333% - 2.45px);
+	margin-bottom: 20px;
+}
+.sina-contact-input .sina-input-block{
+	display: block;
+	width: 100%;
+}
+.sina-contact-input textarea.sina-input-field{
+	height: 178px;
+	resize: vertical;
+}
+.sina-contact-input .sina-button.sina-contact-btn{
+	margin: 0;
+}
+
+/*-------------------------- Countdown --------------------------*/
+.sina-countdown {
+	text-align: center;
+}
+.sina-countdown .sina-cd {
+	height: 110px;
+	width: 100px;
+	margin: 6px;
+	padding: 10px;
+	display: inline-block;
+	text-align: center;
+	font-size: 55px;
+	line-height: 60px;
+	border-radius: 8px;
+}
+.sina-countdown .sina-cd-text {
+	font-size: 16px;
+	line-height: 24px;
+}
+.sina-countdown .sina-cd-message {
+	font-size: 40px;
+	line-height: 50px;
+}
+
+/*-------------------------- Counter --------------------------*/
+.sina-counter{
+	text-align: center;
+}
+.sina-counter .sina-counter-icon i{
+	font-size: 40px;
+}
+.sina-counter .sina-counter-number-wrap{
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 70px;
+}
+.sina-counter .sina-counter-title{
+	font-size: 32px;
+	line-height: 40px;
+}
+
+/*-------------------------- Fancytext --------------------------*/
+@keyframes blink_cursor {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.sina-fancytext .typed-cursor {
+	opacity: 1;
+	animation: blink_cursor 0.7s infinite;
+	font-weight: 400  !important;
+	font-style: normal !important;
+}
+.sina-fancytext .sina-fancytext-strings > .animated {
+	display: inline-block;
+}
+
+/*-------------------------- Flip Box --------------------------*/
+.sina-flipbox{
+	position: relative;
+	height: 230px;
+	text-align: center;
+	perspective: 1000px;
+}
+.sina-flipbox-front,
+.sina-flipbox-back{
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 20px 20px 30px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	transition: .5s;
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.sina-flipbox-icon i{
+	font-size: 38px;
+	padding: 15px 20px;
+	transition: .4s;
+}
+.sina-flipbox-title{
+	font-size: 24px;
+	margin: 15px 0 10px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: .4s;
+}
+/*Verticle flip*/
+.sina-flipbox-front.sina-flipbox-effect-h-flip{
+	transform: rotateY(0deg);
+}
+.sina-flipbox-back.sina-flipbox-effect-h-flip{
+	transform: rotateY(-180deg);
+}
+.sina-flipbox:hover .sina-flipbox-front.sina-flipbox-effect-h-flip{
+	transform: rotateY(180deg);
+}
+.sina-flipbox:hover .sina-flipbox-back.sina-flipbox-effect-h-flip{
+	transform: rotateY(0deg);
+}
+/*Horizontal flip*/
+.sina-flipbox-front.sina-flipbox-effect-v-flip{
+	transform: rotateX(0deg);
+}
+.sina-flipbox-back.sina-flipbox-effect-v-flip{
+	transform: rotateX(-180deg);
+}
+.sina-flipbox:hover .sina-flipbox-front.sina-flipbox-effect-v-flip{
+	transform: rotateX(180deg);
+}
+.sina-flipbox:hover .sina-flipbox-back.sina-flipbox-effect-v-flip{
+	transform: rotateX(0deg);
+}
+/*Zoom*/
+.sina-flipbox-front.sina-flipbox-effect-zoom{
+	opacity: 1;
+	transform: scale(1);
+}
+.sina-flipbox-back.sina-flipbox-effect-zoom{
+	opacity: 0;
+	transform: scale(.5);
+}
+.sina-flipbox:hover .sina-flipbox-back.sina-flipbox-effect-zoom{
+	opacity: 1;
+	transform: scale(1);
+}
+
+/*--------------------------------- Google Map -------------------------------------- */
+#sina-google-map{
+	width: 100%;
+	height: 400px;
+}
+
+/*--------------------------------- Icon Box -------------------------------------- */
+.sina-iconbox{
+	text-align: center;
+	border: 1px solid #eee;
+	padding: 30px;
+	margin: 20px 0 40px;
+	transition: .4s;
+}
+.sina-iconbox:hover{
+	box-shadow:0px 40px 40px rgba(0,0,0,0.1);
+	z-index:100;
+	transform: translate(0, -10px);
+}
+.sina-iconbox-icon i{
+	font-size: 38px;
+	color: #1085e4;
+	padding: 15px 20px;
+	transition: .4s;
+}
+.sina-iconbox .sina-iconbox-title{
+	font-size: 24px;
+	margin: 15px 0 10px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: .4s;
+}
+
+/*--------------------------------- Mailchimp Subscribe Form -------------------------------------- */
+.sina-subs-form{
+	text-align: center;
+}
+.sina-subs-form a{
+	display: none;
+	margin: 0 auto;
+	text-align: center;
+}
+.sina-contact-input .sina-contact-btn,
+.sina-subs-input .sina-subs-btn{
+	margin-left: -4px;
+	padding: 11px 20px;
+	border-radius: 0;
+	font-size: 16px;
+	line-height: 24px;
+}
+.sina-subs-input .sina-input-field{
+	width: 300px;
+}
+.sina-subs-input .sina-input-block{
+	display: block;
+	width: 40%;
+	margin-left: 30%;
+	margin-bottom: 20px;
+}
+.sina-contact-error,
+.sina-contact-success,
+.sina-subs-error,
+.sina-subs-success{
+	color: #0a0;
+	margin: 15px 0 0;
+	padding: 0;
+	display: none;
+}
+.sina-contact-error,
+.sina-subs-error{
+	color: #f40;
+}
+.sina-contact-process,
+.sina-subs-process{
+	color: #ccc;
+	margin: 15px 0 0;
+	display: none;
+}
+
+/*-------------------------- Particle Layer --------------------------*/
+.sina-particle-layer{
+	overflow: hidden;
+	padding: 200px 50px;
+	width: 100%;
+	position: relative;
+}
+.sina-banner-container{
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	z-index: 1;
+	text-align: center;
+}
+.sina-banner-title{
+	margin-bottom: 15px;
+}
+.sina-banner-btns{
+	margin-top: 40px;
+}
+.sina-pricing-btn .sina-order-btn,
+.sina-banner-btns .sina-banner-pbtn,
+.sina-banner-btns .sina-banner-sbtn {
+	padding: 15px 30px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: all 0.4s ease-in-out;
+}
+.sina-banner-sbtn{
+	margin-left: 20px;
+}
+.sina-particle{
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+/*-------------------------- Pie Chart --------------------------*/
+.sina-piechart {
+	position: relative;
+	margin: 0 auto;
+	display: flex;
+}
+.sina-piechart .sina-piechart-content {
+	position: absolute;
+	align-self: center;
+	text-align: center;
+	width: 100%;
+}
+.sina-piechart .sina-piechart-percent {
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 50px;
+	text-align: center;
+}
+.sina-piechart .sina-piechart-title {
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+}
+
 /*--------------------------------- Portfolio -------------------------------------- */
 .sina-portfolio{
 	overflow: hidden;
@@ -172,241 +704,71 @@ img.mfp-img{
 	margin-bottom: 100px;
 }
 
-/*--------------------------------- Subscribe Form -------------------------------------- */
-.sina-subs-form{
+/*--------------------------------- Pricing -------------------------------------- */
+.sina-pricing {
 	text-align: center;
+	box-shadow: 0 0 2px #1085e4;
+	overflow: hidden;
+	transition: .4s;
 }
-.sina-subs-form a{
-	display: none;
-	margin: 0 auto;
-	text-align: center;
+.sina-pricing .sina-pricing-title{
+	padding: 20px 15px;
+	margin: 0;
+	font-weight: 600;
+	font-size: 28px;
 }
-.sina-contact-input .sina-contact-btn,
-.sina-subs-input .sina-subs-btn{
-	margin-left: -4px;
-	padding: 11px 20px;
-	border-radius: 0;
-	font-size: 16px;
+.sina-pricing .sina-price-tag{
+	padding: 20px;
+	font-size: 32px;
+	line-height: 1.1;
+}
+.sina-pricing .sina-price-tag .sina-price-suffix{
+	font-size: 12px;
+	font-weight: 600;
+}
+.sina-pricing-body{
+	margin-bottom: 20px;
+}
+.sina-pricing-body li{
+	line-height: 30px;
+	text-transform: uppercase;
+}
+.sina-pricing-btn{
+	margin-bottom: 30px;
+}
+.sina-pricing-btn .sina-order-btn{
+	border: 1px solid #1085e4;
+}
+
+/*-------------------------- Progressbars --------------------------*/
+.sina-progressbars .sina-bar {
+	display: block;
+	width: 100%;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+.sina-progressbars .sina-bar-title {
+	font-size: 15px;
 	line-height: 24px;
 }
-.sina-subs-input .sina-input-field{
-	width: 300px;
-}
-.sina-subs-input .sina-input-block{
-	display: block;
-	width: 40%;
-	margin-left: 30%;
-	margin-bottom: 20px;
-}
-.sina-contact-error,
-.sina-contact-success,
-.sina-subs-error,
-.sina-subs-success{
-	color: #0a0;
-	margin: 15px 0 0;
-	padding: 0;
-	display: none;
-}
-.sina-contact-error,
-.sina-subs-error{
-	color: #f40;
-}
-.sina-contact-process,
-.sina-subs-process{
-	color: #ccc;
-	margin: 15px 0 0;
-	display: none;
-}
-
-/*--------------------------------- Contact Form -------------------------------------- */
-.sina-contact-input-half{
-	width: calc(50% - 10px);
-	float: left;
-}
-.sina-contact-input-half:last-child{
-	margin-left: 20px;
-}
-.sina-contact-input{
-	overflow: hidden;
-}
-.sina-contact-input .sina-input-field{
-	width: calc(33.33333% - 2.45px);
-	margin-bottom: 20px;
-}
-.sina-contact-input .sina-input-block{
+.sina-progressbars .sina-bar-bg {
 	display: block;
 	width: 100%;
+	height: 16px;
+	border: 1px solid;
 }
-.sina-contact-input textarea.sina-input-field{
-	height: 178px;
-	resize: vertical;
-}
-.sina-contact-input .sina-contact-btn{
-	margin: 0;
-}
-
-/*-------------------------- Particle Layer --------------------------*/
-.sina-particle-layer{
-	overflow: hidden;
-	padding: 200px 50px;
-	width: 100%;
-	position: relative;
-}
-.sina-banner-container{
-	position: relative;
-	width: 100%;
-	margin: 0 auto;
-	z-index: 1;
-	text-align: center;
-}
-.sina-banner-title{
-	margin-bottom: 15px;
-}
-.sina-banner-btns{
-	margin-top: 40px;
-}
-.sina-pricing-btn .sina-order-btn,
-.sina-banner-btns .sina-banner-pbtn,
-.sina-banner-btns .sina-banner-sbtn {
-	padding: 15px 30px;
-	border-radius: 4px;
-	text-transform: uppercase;
-	font-weight: 600;
-	transition: all 0.4s ease-in-out;
-}
-.sina-banner-sbtn{
-	margin-left: 20px;
-}
-.sina-particle{
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: absolute;
-}
-
-/*------------------- Banner Slider, Brand Carousel & Review Carousel -------------------*/
-.sina-banner-slider{
-	position: relative;
-}
-.sina-slider-content{
-	height: 600px;
-	padding: 200px 120px 220px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.sina-slider-overlay{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.sina-review-carousel .owl-next,
-.sina-review-carousel .owl-prev,
-.sina-brand-carousel .owl-next,
-.sina-brand-carousel .owl-prev,
-.sina-banner-slider .owl-next,
-.sina-banner-slider .owl-prev {
-	position: absolute;
-	top: calc(50% - 18px);
-	font-family: arial, sans-serif;
-	font-weight: 700;
-	text-align: center;
-	border-radius: 4px;
-	border: 0;
-	outline: 0;
-	padding: 2px 14px 6px;
-	font-size: 30px;
-	line-height: 30px;
-	cursor: pointer;
-	opacity: 0;
-	background: #1085e4;
-	transition: all 0.4s ease-in-out;
-}
-.sina-review-carousel .owl-next,
-.sina-brand-carousel .owl-next,
-.sina-banner-slider .owl-next{
-	right: 35px;
-}
-.sina-review-carousel .owl-prev,
-.sina-brand-carousel .owl-prev,
-.sina-banner-slider .owl-prev{
-	left: 35px;
-}
-.sina-review-carousel .owl-next span,
-.sina-review-carousel .owl-prev span,
-.sina-brand-carousel .owl-next span,
-.sina-brand-carousel .owl-prev span,
-.sina-banner-slider .owl-next span,
-.sina-banner-slider .owl-prev span{
-	float: left;
-}
-.sina-review-carousel:hover .owl-next,
-.sina-review-carousel:hover .owl-prev,
-.sina-banner-slider:hover .owl-next,
-.sina-banner-slider:hover .owl-prev {
-	opacity: 1;
-}
-.sina-banner-slider .owl-dots,
-.sina-review-carousel .owl-dots {
+.sina-progressbars .sina-bar-content {
 	display: flex;
-	-ms-display: flex;
-	-webkit-display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
+	height: 100%;
+	width: 0;
 }
-.sina-banner-slider .owl-dots{
-	position: absolute;
-	bottom: 0;
+.sina-progressbars .sina-bar-percent {
 	width: 100%;
-}
-.sina-banner-slider .owl-dot,
-.sina-review-carousel .owl-dot {
-	outline: 0;
-	cursor: pointer;
-	background: transparent;
-	height: 10px; 
-	width: 20px;
-	border: 1px solid #1085e4;
-	border-radius: 10px;
-	margin: 25px .2rem;
-	transition: all .25s ease-in-out
-}
-.sina-banner-slider .owl-dot.active,
-.sina-review-carousel .owl-dot.active {
-	height: 10px;
-	width: 10px;
-	background-color: #1085e4;
-	border-radius: 50%
-}
-.sina-anim-invisible{
-	visibility: hidden;
-}
-
-/*--------------------------------- Brand Carousel -------------------------------------- */
-.sina-brand-carousel{
-	overflow: hidden;
-}
-.sina-brand-item{
-	padding: 20px;
-}
-.sina-brand-item-inner{
-	border: 1px solid #eee;
-	transition: all 0.3s ease-in-out;
-}
-.sina-brand-item-inner a{
-	display: block;
-	padding: 20px 75px;
-	text-align: center;
-}
-.sina-brand-item-inner a img{
-	transition: all 0.3s ease-in-out;
+	padding: 0 5px;
+	align-self: center;
+	text-align: right;
+	font-size: 12px;
+	line-height: 14px;
 }
 
 /*--------------------------------- Review Carousel -------------------------------------- */
@@ -428,135 +790,6 @@ img.mfp-img{
 }
 .sina-review-comment{
 	margin-top: 20px;
-}
-
-/*--------------------------------- Blogpost -------------------------------------- */
-.sina-blogpost {
-	overflow: hidden;
-}
-.sina-bp-item-2{
-	width: 50%;
-}
-.sina-bp-item-3{
-	width: 33.333333%;
-}
-.sina-bp-item-4{
-	width: 25%;
-}
-.sina-bp-col{
-	padding: 10px;
-	float: left;
-	overflow: hidden;
-}
-.sina-bp{
-	border: 1px solid #eee;
-}
-.sina-bg-thumb img {
-	display: block;
-}
-.sina-bp-content{
-	padding: 15px;
-}
-.sina-bp-title,
-.sina-bp-title a{
-	display: block;
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 1.1;
-	transition: .4s;
-}
-.sina-bp-meta{
-	padding-top: .75rem;
-	border-top: 1px solid #1085e4;
-	margin-bottom: 0px;
-	margin-top: 15px;
-}
-.sina-bp-pagination {
-	margin: 0 15px;
-}
-.sina-bp-pagination .page-numbers {
-	display: inline-block;
-	padding: 6px 12px;
-	margin: 4px 2px;
-	text-align: center;
-	font-size: 15px;
-	line-height: 20px;
-	border: 1px solid #1085e4;
-	transition: all 0.4s ease-in-out;
-}
-
-/*--------------------------------- Video -------------------------------------- */
-.sina-video{
-	text-align: center;
-}
-.sina-video-play,
-.sina-video-play:focus{
-	outline: none;
-}
-.sina-video i {
-	font-size: 32px;
-	color: #1085e4;
-	border-radius: 50%;
-	text-align: center;
-	padding: 20px 20px 20px 26px;
-	transition: 0.4s;
-}
-.sina-video .sina-video-title{
-	margin-top: 30px;
-	padding: 0;
-}
-
-/*--------------------------------- Accordion -------------------------------------- */
-.sina-accordion-item{
-	margin-bottom: 15px;
-	overflow: hidden;
-}
-.sina-accordion-item .sina-accordion-header{
-	margin: 0;
-	padding: 20px 25px;
-	cursor: pointer;
-	font-weight: 700;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	transition: 0.4s;
-}
-.sina-accordion-item .sina-accordion-header,
-.sina-accordion-title{
-	font-size: 16px;
-}
-.sina-accordion-body{
-	overflow: hidden;
-	display: none;
-	border: 1px solid #1085e4;
-}
-.sina-accordion-desc{
-	padding: 20px;
-}
-.sina-accordion-icon .on,
-.sina-accordion-icon .off {
-	font-size: 20px;
-	line-height: 18px;
-}
-.sina-accordion-icon {
-	padding-left: 20px;
-}
-.sina-accordion-item .sina-accordion-icon .on,
-.sina-accordion-item.open .sina-accordion-icon .off{
-	display: none;
-}
-.sina-accordion-item.open .sina-accordion-icon .on{
-	display: block;
-}
-
-/*--------------------------------- Google Map -------------------------------------- */
-#sina-google-map{
-	width: 100%;
-	height: 400px;
 }
 
 /*--------------------------------- Team -------------------------------------- */
@@ -607,190 +840,27 @@ img.mfp-img{
 	transition: .4s;
 }
 
-/*--------------------------------- Pricing -------------------------------------- */
-.sina-pricing {
+/*--------------------------------- Video -------------------------------------- */
+.sina-video{
 	text-align: center;
-	box-shadow: 0 0 2px #1085e4;
-	overflow: hidden;
-	transition: .4s;
 }
-.sina-pricing .sina-pricing-title{
-	padding: 20px 15px;
-	margin: 0;
-	font-weight: 600;
-	font-size: 28px;
+.sina-video-play,
+.sina-video-play:focus{
+	outline: none;
 }
-.sina-pricing .sina-price-tag{
-	padding: 20px;
+.sina-video i {
 	font-size: 32px;
-	line-height: 1.1;
-}
-.sina-pricing .sina-price-tag .sina-price-suffix{
-	font-size: 12px;
-	font-weight: 600;
-}
-.sina-pricing-body{
-	margin-bottom: 20px;
-}
-.sina-pricing-body li{
-	line-height: 30px;
-	text-transform: uppercase;
-}
-.sina-pricing-btn{
-	margin-bottom: 30px;
-}
-.sina-pricing-btn .sina-order-btn{
-	border: 1px solid #1085e4;
-}
-
-
-/*--------------------------------- Icon Box -------------------------------------- */
-.sina-iconbox{
-	text-align: center;
-	border: 1px solid #eee;
-	padding: 30px;
-	margin: 20px 0 40px;
-	transition: .4s;
-}
-.sina-iconbox:hover{
-	box-shadow:0px 40px 40px rgba(0,0,0,0.1);
-	z-index:100;
-	transform: translate(0, -10px);
-}
-.sina-iconbox:hover .sina-iconbox-title{
 	color: #1085e4;
+	border-radius: 50%;
+	text-align: center;
+	padding: 20px 20px 20px 26px;
+	transition: 0.4s;
 }
-.sina-iconbox-icon i{
-	font-size: 38px;
-	color: #1085e4;
-	padding: 15px 20px;
-	transition: .4s;
-}
-.sina-iconbox .sina-iconbox-title{
-	font-size: 24px;
-	margin: 15px 0 10px;
-	text-transform: uppercase;
-	font-weight: 600;
-	transition: .4s;
+.sina-video .sina-video-title{
+	margin-top: 30px;
+	padding: 0;
 }
 
-/*-------------------------- Countdown --------------------------*/
-.sina-countdown {
-	text-align: center;
-}
-.sina-countdown .sina-cd {
-	height: 110px;
-	width: 100px;
-	margin: 6px;
-	padding: 10px;
-	display: inline-block;
-	text-align: center;
-	font-size: 55px;
-	line-height: 60px;
-	border-radius: 8px;
-}
-.sina-countdown .sina-cd-text {
-	font-size: 16px;
-	line-height: 24px;
-}
-.sina-countdown .sina-cd-message {
-	font-size: 40px;
-	line-height: 50px;
-}
-
-/*-------------------------- Fancytext --------------------------*/
-@keyframes blink_cursor {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-.sina-fancytext .typed-cursor {
-	opacity: 1;
-	animation: blink_cursor 0.7s infinite;
-	font-weight: 400  !important;
-	font-style: normal !important;
-}
-.sina-fancytext .sina-fancytext-strings > .animated {
-	display: inline-block;
-}
-
-/*-------------------------- Progressbars --------------------------*/
-.sina-progressbars .sina-bar {
-	display: block;
-	width: 100%;
-	margin-bottom: 15px;
-	overflow: hidden;
-}
-.sina-progressbars .sina-bar-title {
-	font-size: 15px;
-	line-height: 24px;
-}
-.sina-progressbars .sina-bar-bg {
-	display: block;
-	width: 100%;
-	height: 16px;
-	border: 1px solid;
-}
-.sina-progressbars .sina-bar-content {
-	display: flex;
-	height: 100%;
-	width: 0;
-}
-.sina-progressbars .sina-bar-percent {
-	width: 100%;
-	padding: 0 5px;
-	align-self: center;
-	text-align: right;
-	font-size: 12px;
-	line-height: 14px;
-}
-
-/*-------------------------- Pie Chart --------------------------*/
-.sina-piechart {
-	position: relative;
-	margin: 0 auto;
-	display: flex;
-}
-.sina-piechart .sina-piechart-content {
-	position: absolute;
-	align-self: center;
-	text-align: center;
-	width: 100%;
-}
-.sina-piechart .sina-piechart-percent {
-	font-size: 50px;
-	font-weight: 700;
-	line-height: 50px;
-	text-align: center;
-}
-.sina-piechart .sina-piechart-title {
-	font-size: 18px;
-	line-height: 24px;
-	text-align: center;
-}
-
-/*-------------------------- Counter --------------------------*/
-.sina-counter{
-	text-align: center;
-}
-.sina-counter .sina-counter-icon i{
-	font-size: 40px;
-}
-.sina-counter .sina-counter-number-wrap{
-	font-size: 50px;
-	font-weight: 700;
-	line-height: 70px;
-}
-.sina-counter .sina-counter-title{
-	font-size: 32px;
-	line-height: 40px;
-}
 
 
 /* RESPONSIVE-Tablet*/
@@ -822,12 +892,21 @@ img.mfp-img{
 	.sina-banner-slider .owl-prev{
 		display: none;
 	}
+	.sina-slider-content,
+	.sina-particle-layer{
+		padding: 100px 20px;
+	}
+	.sina-banner-btns .sina-banner-pbtn,
+	.sina-banner-btns .sina-banner-sbtn{
+		padding: 10px;
+	}
 	.sina-bp-col{
 		width: calc(100% - 30px);
 	}
 	.sina-subs-input .sina-input-field{
 		width: 180px;
 	}
+	.sina-contact-input .sina-input-field,
 	.sina-subs-input .sina-input-block{
 		width: 100%;
 		margin-left: 0;

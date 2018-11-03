@@ -394,7 +394,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 			[
 				'label' => __( 'Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#aa0000',
+				'default' => '#d300d0',
 				'selectors' => [
 					'{{WRAPPER}} .sina-fancytext-prefix' => 'color: {{VALUE}};',
 				],
@@ -524,34 +524,31 @@ class Sina_Fancytext_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-			if( settings.fancy_prefix || settings.fancy_suffix || settings.fancy_text.length > 0 ){
+		var fancyText = '';
+		_.each( settings.fancy_text, function( item, index ) {
+			fancyText += item['fancy_items'] + '@@';
+		});
 
-				var fancyText = '';
-				_.each( settings.fancy_text, function( item, index ) {
-					fancyText += item['fancy_items'] + '@@';
-				});
+		view.addRenderAttribute( 'fancy_prefix', 'class', 'sina-fancytext-prefix' );
+		view.addInlineEditingAttributes( 'fancy_prefix' );
 
-				view.addRenderAttribute( 'fancy_prefix', 'class', 'sina-fancytext-prefix' );
-				view.addInlineEditingAttributes( 'fancy_prefix' );
+		view.addRenderAttribute( 'fancy_suffix', 'class', 'sina-fancytext-suffix' );
+		view.addInlineEditingAttributes( 'fancy_suffix' );
+		#>
+		<div class="sina-fancytext" data-fancy-text="{{{fancyText.trim('@@')}}}" data-anim="{{{settings.animation_type}}}" data-speed="{{{settings.typing_speed}}}" data-delay="{{{settings.delay}}}" data-cursor="{{{settings.cursor}}}" data-loop="{{{settings.loop}}}">
+			<{{{settings.tag}}}>
 
-				view.addRenderAttribute( 'fancy_suffix', 'class', 'sina-fancytext-suffix' );
-				view.addInlineEditingAttributes( 'fancy_suffix' );
-			#>
-			<div class="sina-fancytext" data-fancy-text="{{{fancyText.trim('@@')}}}" data-anim="{{{settings.animation_type}}}" data-speed="{{{settings.typing_speed}}}" data-delay="{{{settings.delay}}}" data-cursor="{{{settings.cursor}}}" data-loop="{{{settings.loop}}}">
-				<{{{settings.tag}}}>
-
-				<# if ( settings.fancy_prefix ) { #>
-					<span {{{ view.getRenderAttributeString( 'fancy_prefix' ) }}}>{{{settings.fancy_prefix}}}</span>
-				<# } #>
-				<# if ( settings.fancy_text.length > 0 ) { #>
-					<span class="sina-fancytext-strings">{{{settings.fancy_text[0]['fancy_items']}}}</span>
-				<# } #>
-				<# if ( settings.fancy_suffix ) { #>
-					<span {{{ view.getRenderAttributeString( 'fancy_suffix' ) }}}>{{{settings.fancy_suffix}}}</span>
-				<# } #>
-				</{{{settings.tag}}}>
-			</div>
-		<# } #>
+			<# if ( settings.fancy_prefix ) { #>
+				<span {{{ view.getRenderAttributeString( 'fancy_prefix' ) }}}>{{{settings.fancy_prefix}}}</span>
+			<# } #>
+			<# if ( settings.fancy_text.length > 0 ) { #>
+				<span class="sina-fancytext-strings">{{{settings.fancy_text[0]['fancy_items']}}}</span>
+			<# } #>
+			<# if ( settings.fancy_suffix ) { #>
+				<span {{{ view.getRenderAttributeString( 'fancy_suffix' ) }}}>{{{settings.fancy_suffix}}}</span>
+			<# } #>
+			</{{{settings.tag}}}>
+		</div>
 		<?php
 	}
 }

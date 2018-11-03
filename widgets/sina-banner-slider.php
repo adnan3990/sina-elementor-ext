@@ -738,34 +738,6 @@ class Sina_Banner_Slider_Widget extends Widget_Base {
 			]
 		);
 		$this->add_responsive_control(
-			'container_height',
-			[
-				'label' => __( 'Height', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 100,
-						'max' => 2000,
-						'step' => 1,
-					],
-					'em' => [
-						'min' => 10,
-						'max' => 200,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 5,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-slider-content' => 'height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
 			'container_padding',
 			[
 				'label' => __( 'Padding', 'sina-ext' ),

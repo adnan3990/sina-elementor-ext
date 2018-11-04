@@ -542,6 +542,11 @@
 				$success.fadeOut(0);
 				$process.fadeIn(200);
 
+				setTimeout( function() {
+					$error.fadeOut(200);
+					$success.fadeOut(200);
+				}, 10000 );
+
 				return false;
 			});
 			function mailchimpCallback(resp) {
@@ -549,17 +554,9 @@
 					$process.fadeOut(0);
 					$success.html( resp.msg ).fadeIn(800);
 
-					setTimeout( function() {
-						$success.fadeOut(200);
-					}, 10000 );
-
 				} else if (resp.result === 'error') {
 					$process.fadeOut(0);
 					$error.html( resp.msg.replace('0 - ', '') ).fadeIn(800);
-
-					setTimeout( function() {
-						$error.fadeOut(200);
-					}, 10000 );
 				}
 			}
 		});

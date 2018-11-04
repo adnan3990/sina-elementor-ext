@@ -103,12 +103,12 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _register_controls() {
-		// Start Email Content
+		// Start Fields Content
 		// =====================
 		$this->start_controls_section(
-			'email_content',
+			'fields_content',
 			[
-				'label' => __( 'Email Field', 'sina-ext' ),
+				'label' => __( 'Fields', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -116,37 +116,138 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Mailchimp URL', 'sina-ext' ),
+				'label' => __( 'Mailchimp Form URL', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Mailchimp URL', 'sina-ext' ),
+				'placeholder' => __( 'Enter URL', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
-			'placeholder',
+			'email_placeholder',
 			[
-				'label' => __( 'Placeholder Text', 'sina-ext' ),
+				'label' => __( 'Email placeholder text', 'sina-ext' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => __( 'Enter Your Email', 'sina-ext' ),
+				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'separator' => 'before',
+				'default' => __( 'Enter Email', 'sina-ext' ),
 			]
 		);
 		$this->add_control(
-			'display',
+			'email_tag',
 			[
-				'label' => __( 'Display', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'inline-block' => __( 'Inline', 'sina-ext' ),
-					'block' => __( 'Block', 'sina-ext' ),
+				'label' => __( 'Field tag', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
+				'separator' => 'after',
+				'default' => __( 'EMAIL', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'fname',
+			[
+				'label' => __( 'First Name', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'fname_placeholder',
+			[
+				'label' => __( 'First name placeholder text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'condition' => [
+					'fname!' => '',
 				],
-				'default' => 'inline-block',
+				'default' => __( 'Enter first name', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'fname_tag',
+			[
+				'label' => __( 'Field tag', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
+				'condition' => [
+					'fname!' => '',
+				],
+				'separator' => 'after',
+				'default' => __( 'FNAME', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'lname',
+			[
+				'label' => __( 'Last Name', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'lname_placeholder',
+			[
+				'label' => __( 'Last name placeholder text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'condition' => [
+					'lname!' => '',
+				],
+				'default' => __( 'Enter Last Name', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'lname_tag',
+			[
+				'label' => __( 'Field tag', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
+				'condition' => [
+					'lname!' => '',
+				],
+				'separator' => 'after',
+				'default' => __( 'LNAME', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'phone',
+			[
+				'label' => __( 'Phone Number', 'sina-ext' ),
+				'type' => Controls_Manager::SWITCHER,
+			]
+		);
+		$this->add_control(
+			'phone_placeholder',
+			[
+				'label' => __( 'Phone placeholder text', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter placeholder text', 'sina-ext' ),
+				'condition' => [
+					'phone!' => '',
+				],
+				'default' => __( 'Enter Phone Number', 'sina-ext' ),
+			]
+		);
+		$this->add_control(
+			'phone_tag',
+			[
+				'label' => __( 'Field tag', 'sina-ext' ),
+				'label_block' => true,
+				'type' => Controls_Manager::TEXT,
+				'placeholder' => __( 'Enter field tag', 'sina-ext' ),
+				'condition' => [
+					'phone!' => '',
+				],
+				'default' => __( 'PHONE', 'sina-ext' ),
 			]
 		);
 
 		$this->end_controls_section();
-		// End Email Content
+		// End Fields Content
 		// =====================
 
 
@@ -222,8 +323,21 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'field_style',
 			[
-				'label' => __( 'Email Field', 'sina-ext' ),
+				'label' => __( 'Fields', 'sina-ext' ),
 				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'display',
+			[
+				'label' => __( 'Display', 'sina-ext' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'inline-block' => __( 'Inline', 'sina-ext' ),
+					'block' => __( 'Block', 'sina-ext' ),
+				],
+				'default' => 'inline-block',
 			]
 		);
 
@@ -314,9 +428,9 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
-			'email_width',
+			'fname_width',
 			[
-				'label' => __( 'Width', 'sina-ext' ),
+				'label' => __( 'First Name Width', 'sina-ext' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -336,15 +450,136 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 						'step' => 1,
 					],
 				],
+				'condition' => [
+					'fname!' => '',
+				],
+				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .sina-subs-input .sina-input-fname' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'fname_margin',
+			[
+				'label' => __( 'First Name Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 500,
+						'step' => 1,
+					],
+					'em' => [
+						'max' => 20,
+						'step' => 1,
+					],
+					'%' => [
+						'max' => 50,
+						'step' => 1,
+					],
+				],
+				'condition' => [
+					'fname!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-input .sina-input-fname' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'lname_width',
+			[
+				'label' => __( 'Last Name Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 100,
+						'max' => 500,
+						'step' => 1,
+					],
+					'em' => [
+						'min' => 10,
+						'max' => 30,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 5,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'condition' => [
+					'lname!' => '',
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-input .sina-input-lname' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'lname_margin',
+			[
+				'label' => __( 'Last Name Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 500,
+						'step' => 1,
+					],
+					'em' => [
+						'max' => 20,
+						'step' => 1,
+					],
+					'%' => [
+						'max' => 50,
+						'step' => 1,
+					],
+				],
+				'condition' => [
+					'lname!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-input .sina-input-lname' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'email_width',
+			[
+				'label' => __( 'Email Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 100,
+						'max' => 500,
+						'step' => 1,
+					],
+					'em' => [
+						'min' => 10,
+						'max' => 30,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 5,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-input .sina-input-email' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'email_margin',
 			[
-				'label' => __( 'Margin', 'sina-ext' ),
+				'label' => __( 'Email Margin', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -362,7 +597,67 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-subs-input .sina-input-field' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .sina-subs-input .sina-input-email' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'phone_width',
+			[
+				'label' => __( 'Phone Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 100,
+						'max' => 500,
+						'step' => 1,
+					],
+					'em' => [
+						'min' => 10,
+						'max' => 30,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 5,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'condition' => [
+					'phone!' => '',
+				],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-input .sina-input-phone' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'phone_margin',
+			[
+				'label' => __( 'Phone Margin', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 500,
+						'step' => 1,
+					],
+					'em' => [
+						'max' => 20,
+						'step' => 1,
+					],
+					'%' => [
+						'max' => 50,
+						'step' => 1,
+					],
+				],
+				'condition' => [
+					'phone!' => '',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-input .sina-input-phone' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -500,6 +795,31 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'condition' => [
+					'display!' => 'inline-block',
+				],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-form' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'btn_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
@@ -570,24 +890,28 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 
 	protected function render() {
 		$data = $this->get_settings_for_display();
-
-		$this->add_render_attribute( 'label' );
-		$this->add_inline_editing_attributes( 'label' );
-
 		$display_class = ('block' == $data['display']) ? 'sina-input-block' : ''; 
 		?>
 		<div class="sina-form">
 			<form class="sina-subs-form"
 			data-link="<?php echo esc_attr( $data['link'] ); ?>">
 				<div class="sina-subs-input">
-					<input class="sina-input-field <?php echo esc_attr( $display_class ); ?>" type="email" name="subscribe" placeholder="<?php echo esc_attr( $data['placeholder'] ); ?>" required>
-					<button type="submit" class="sina-button sina-subs-btn">
+					<?php if ( $data['fname'] ): ?>
+						<input class="sina-input-field sina-input-fname <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['fname_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['fname_placeholder'] ); ?>">
+					<?php endif; ?>
+					<?php if ( $data['lname'] ): ?>
+						<input class="sina-input-field sina-input-lname <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['lname_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['lname_placeholder'] ); ?>">
+					<?php endif; ?>
+					<input class="sina-input-field sina-input-email <?php echo esc_attr( $display_class ); ?>" type="email" name="<?php echo esc_attr( $data['email_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['email_placeholder'] ); ?>">
+					<?php if ( $data['phone'] ): ?>
+						<input class="sina-input-field sina-input-phone <?php echo esc_attr( $display_class ); ?>" type="text" name="<?php echo esc_attr( $data['phone_tag'] ); ?>" placeholder="<?php echo esc_attr( $data['phone_placeholder'] ); ?>">
+					<?php endif; ?>
+
+					<button type="submit" class="sina-button sina-subs-btn <?php echo esc_attr( $display_class ); ?>">
 						<?php if ( $data['icon'] && 'left' == $data['icon_position'] ): ?>
 							<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-left"></i>
 						<?php endif ?>
-						<span <?php echo $this->get_render_attribute_string( 'label' ); ?>>
-							<?php echo esc_html( $data['label'] ); ?>
-						</span>
+						<?php echo esc_html( $data['label'] ); ?>
 						<?php if ( $data['icon'] && 'right' == $data['icon_position'] ): ?>
 							<i class="<?php echo esc_attr( $data['icon'] ); ?> sina-btn-icon-right"></i>
 						<?php endif ?>
@@ -606,22 +930,27 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 		?>
 		<#
 		var displayClass = ('block' == settings.display) ? 'sina-input-block' : '';
-
-		view.addRenderAttribute( 'label' );
-		view.addInlineEditingAttributes( 'label' );
 		#>
 		<div class="sina-form">
 			<form class="sina-subs-form"
 			data-link="{{{settings.link}}}">
 				<div class="sina-subs-input">
-					<input class="sina-input-field {{{displayClass}}}" type="email" name="subscribe" placeholder="{{{settings.placeholder}}}" required>
-					<button type="submit" class="sina-button sina-subs-btn">
+					<# if( settings.fname ) { #>
+						<input class="sina-input-field sina-input-fname {{{displayClass}}}" type="text" name="{{{settings.fname_tag}}}" placeholder="{{{settings.fname_placeholder}}}">
+					<# } #>
+					<# if( settings.lname ) { #>
+						<input class="sina-input-field sina-input-lname {{{displayClass}}}" type="text" name="{{{settings.lname_tag}}}" placeholder="{{{settings.lname_placeholder}}}">
+					<# } #>
+					<input class="sina-input-field sina-input-email {{{displayClass}}}" type="email" name="{{{settings.email_tag}}}" placeholder="{{{settings.email_placeholder}}}">
+					<# if( settings.phone ) { #>
+						<input class="sina-input-field sina-input-phone {{{displayClass}}}" type="text" name="{{{settings.phone_tag}}}" placeholder="{{{settings.phone_placeholder}}}">
+					<# } #>
+
+					<button type="submit" class="sina-button sina-subs-btn {{{displayClass}}}">
 						<# if ( settings.icon && 'left' == settings.icon_position ) { #>
 							<i class="{{{settings.icon}}} sina-btn-icon-left"></i>
 						<# } #>
-
-						<span {{{ view.getRenderAttributeString( 'label' ) }}}>{{{settings.label}}}</span>
-
+						{{{settings.label}}}
 						<# if ( settings.icon && 'right' == settings.icon_position ) { #>
 							<i class="{{{settings.icon}}} sina-btn-icon-right"></i>
 						<# } #>

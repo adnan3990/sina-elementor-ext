@@ -673,12 +673,33 @@ class Sina_Contact_Form_Widget extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'separator' => 'before',
+				'selectors' => [
+					'{{WRAPPER}} .sina-contact-form' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
 			'btn_radius',
 			[
 				'label' => __( 'Radius', 'sina-ext' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .sina-contact-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

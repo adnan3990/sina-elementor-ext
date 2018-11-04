@@ -744,7 +744,7 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 		$this->start_controls_tab(
 			'btn_hover',
 			[
-				'label' => __( 'Hober', 'sina-ext' ),
+				'label' => __( 'Hover', 'sina-ext' ),
 			]
 		);
 

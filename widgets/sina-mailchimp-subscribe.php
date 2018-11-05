@@ -372,6 +372,20 @@ class Sina_MC_Subscribe_Widget extends Widget_Base {
 				],
 			]
 		);
+		$this->add_control(
+			'placeholder_color',
+			[
+				'label' => __( 'Placeholder Color', 'sina-ext' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#aaa',
+				'selectors' => [
+					'{{WRAPPER}} .sina-subs-input .sina-input-field::-webkit-input-placeholder' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-subs-input .sina-input-field::-moz-placeholder' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-subs-input .sina-input-field::-ms-placeholder' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-subs-input .sina-input-field::placeholder' => 'color: {{VALUE}};',
+				],
+			]
+		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[

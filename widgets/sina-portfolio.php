@@ -122,7 +122,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 		$this->add_control(
 			'columns',
 			[
-				'label' => __( 'Number of Columns', 'sina-ext' ),
+				'label' => __( 'Number of Column', 'sina-ext' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'sina-pf-item-2' => __( '2', 'sina-ext' ),
@@ -754,7 +754,7 @@ class Sina_Portfolio_Widget extends Widget_Base {
 							style="background-image: url(<?php echo esc_url( $item['image']['url'] ); ?>);">
 							<div class="sina-portfolio-overlay <?php echo esc_attr( $data['effects'] ); ?>">
 								<div class="sina-portfolio-icons">
-									<a href="#" data-mfp-src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom">
+									<a title="<?php echo esc_attr( $item['item_name'] ); ?>" href="#" data-mfp-src="<?php echo esc_url( $item['image']['url'] ); ?>" class="sina-portfolio-zoom">
 										<i class="fa fa-search-plus"></i>
 									</a>
 									<a href="<?php echo esc_url( $item['link']['url'] ); ?>"

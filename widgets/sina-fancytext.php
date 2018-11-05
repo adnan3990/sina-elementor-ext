@@ -169,6 +169,22 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				],
 			]
 		);
+
+		$this->end_controls_section();
+		// End Fancytext Content
+		// =======================
+
+
+		// Start Fancy Settings
+		// ======================
+		$this->start_controls_section(
+			'fancy_settings',
+			[
+				'label' => __( 'Fancy Settings', 'sina-ext' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
 		$this->add_responsive_control(
 			'display',
 			[
@@ -176,7 +192,7 @@ class Sina_Fancytext_Widget extends Widget_Base {
 				'label_block' => true,
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'inline-block' => __( 'Inline Block', 'sina-ext' ),
+					'inline-block' => __( 'Block', 'sina-ext' ),
 					'block' => __( 'Block', 'sina-ext' ),
 				],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
@@ -334,8 +350,8 @@ class Sina_Fancytext_Widget extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-		// End Fancytext Content
-		// =======================
+		// End Fancy Settings
+		// ====================
 
 
 		// Start Fancy Style
@@ -524,31 +540,41 @@ class Sina_Fancytext_Widget extends Widget_Base {
 	protected function _content_template() {
 		?>
 		<#
-		var fancyText = '';
-		_.each( settings.fancy_text, function( item, index ) {
-			fancyText += item['fancy_items'] + '@@';
-		});
+		if ( settings.fancy_prefix || settings.fancy_suffix || settings.fancy_text.length > 0 ) {
+			var fancyText = '';
+			_.each( settings.fancy_text, function( item, index ) {
+				fancyText += item['fancy_items'] + '@@';
+			});
 
-		view.addRenderAttribute( 'fancy_prefix', 'class', 'sina-fancytext-prefix' );
-		view.addInlineEditingAttributes( 'fancy_prefix' );
+			view.addRenderAttribute( 'fancy_prefix', 'class', 'sina-fancytext-prefix' );
+			view.addInlineEditingAttributes( 'fancy_prefix' );
 
-		view.addRenderAttribute( 'fancy_suffix', 'class', 'sina-fancytext-suffix' );
-		view.addInlineEditingAttributes( 'fancy_suffix' );
-		#>
-		<div class="sina-fancytext" data-fancy-text="{{{fancyText.trim('@@')}}}" data-anim="{{{settings.animation_type}}}" data-speed="{{{settings.typing_speed}}}" data-delay="{{{settings.delay}}}" data-cursor="{{{settings.cursor}}}" data-loop="{{{settings.loop}}}">
-			<{{{settings.tag}}}>
+			view.addRenderAttribute( 'fancy_suffix', 'class', 'sina-fancytext-suffix' );
+			view.addInlineEditingAttributes( 'fancy_suffix' );
+			#>
+			<div class="sina-fancytext" data-fancy-text="{{{fancyText.trim('@@')}}}" data-anim="{{{settings.animation_type}}}" data-speed="{{{settings.typing_speed}}}" data-delay="{{{settings.delay}}}" data-cursor="{{{settings.cursor}}}" data-loop="{{{settings.loop}}}">
+				<{{{settings.tag}}}>
 
-			<# if ( settings.fancy_prefix ) { #>
-				<span {{{ view.getRenderAttributeString( 'fancy_prefix' ) }}}>{{{settings.fancy_prefix}}}</span>
-			<# } #>
-			<# if ( settings.fancy_text.length > 0 ) { #>
-				<span class="sina-fancytext-strings">{{{settings.fancy_text[0]['fancy_items']}}}</span>
-			<# } #>
-			<# if ( settings.fancy_suffix ) { #>
-				<span {{{ view.getRenderAttributeString( 'fancy_suffix' ) }}}>{{{settings.fancy_suffix}}}</span>
-			<# } #>
-			</{{{settings.tag}}}>
-		</div>
+				<# if ( settings.fancy_prefix ) { #>
+					<span {{{ view.getRenderAttributeString( 'fancy_prefix' ) }}}>{{{settings.fancy_prefix}}}</span>
+				<# } #>
+
+				<# if ( 'typing' == settings.animation_type ) { #>
+					<span class="sina-fancytext-strings">
+						{{{settings.fancy_text[0]['fancy_items']}}}
+					</span>
+				<# } else { #>
+					<span class="sina-fancytext-strings">
+						{{{fancyText.trim('@@')}}}
+					</span>
+				<# } #>
+
+				<# if ( settings.fancy_suffix ) { #>
+					<span {{{ view.getRenderAttributeString( 'fancy_suffix' ) }}}>{{{settings.fancy_suffix}}}</span>
+				<# } #>
+				</{{{settings.tag}}}>
+			</div>
+		<# } #>
 		<?php
 	}
 }

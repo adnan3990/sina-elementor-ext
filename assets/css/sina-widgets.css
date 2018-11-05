@@ -74,6 +74,9 @@ img.mfp-img{
 .sina-accordion-desc{
 	padding: 20px;
 }
+.sina-accordion-desc p{
+	margin-bottom: 0;
+}
 .sina-accordion-icon .on,
 .sina-accordion-icon .off {
 	font-size: 20px;

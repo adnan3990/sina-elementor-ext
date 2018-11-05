@@ -116,7 +116,6 @@ class Sina_Accordion_Widget extends Widget_Base {
 			[
 				'label' => __( 'First Item Open', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'default' => 'yes',
 			]
 		);
 		$this->add_control(

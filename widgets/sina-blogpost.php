@@ -214,35 +214,6 @@ class Sina_Blogpost_Widget extends Widget_Base {
 				'default' => 'h2',
 			]
 		);
-		$this->add_responsive_control(
-			'alignment',
-			[
-				'label' => __( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'sina-ext' ),
-						'icon' => 'fa fa-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'sina-ext' ),
-						'icon' => 'fa fa-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'sina-ext' ),
-						'icon' => 'fa fa-align-right',
-					],
-					'justify' => [
-						'title' => __( 'justify', 'sina-ext' ),
-						'icon' => 'fa fa-align-justify',
-					],
-				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
-				'selectors' => [
-					'{{WRAPPER}} .sina-bp-content' => 'text-align: {{VALUE}};',
-				],
-			]
-		);
 
 		$this->end_controls_section();
 		// End Blogpost Content
@@ -288,6 +259,35 @@ class Sina_Blogpost_Widget extends Widget_Base {
 			[
 				'name' => 'box_border',
 				'selector' => '{{WRAPPER}} .sina-bp',
+			]
+		);
+		$this->add_responsive_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'sina-ext' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'sina-ext' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'sina-ext' ),
+						'icon' => 'fa fa-align-right',
+					],
+					'justify' => [
+						'title' => __( 'justify', 'sina-ext' ),
+						'icon' => 'fa fa-align-justify',
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'selectors' => [
+					'{{WRAPPER}} .sina-bp-content' => 'text-align: {{VALUE}};',
+				],
 			]
 		);
 		$this->add_responsive_control(
